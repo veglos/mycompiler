@@ -6,7 +6,7 @@
 #include <string>
 
 enum class TokenType {
-  _return,
+  _exit,
   int_lit,
   semi
 };
@@ -30,8 +30,8 @@ std::vector<Token> tokenize(const std::string& str){
         i++;
       }
       i--;
-      if(buff == "return"){
-        tokens.push_back({.type = TokenType::_return});
+      if(buff == "exit"){
+        tokens.push_back({.type = TokenType::_exit});
         buff.clear();
         continue;
       }
